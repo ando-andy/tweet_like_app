@@ -1,0 +1,18 @@
+<!-- 20182010修正ヘッダー部分をapplication.html.erbに移動 -->
+<div class="main posts-index">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+         <img src="<%= "/public/user_images/default_user.jpg" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+           <%= link_to(post.user.name, "/users/#{post.user.id}")%>
+          </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
